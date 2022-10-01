@@ -1,0 +1,98 @@
+<title>Books</title>
+{% extends 'system/base.html' %}
+
+
+{% block body %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<!-- <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet"/> -->
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/> -->
+<link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<script src="https://kit.fontawesome.com/3a44b91f72.js" crossorigin="anonymous"></script>
+
+
+<div class="container mt-5">
+<table id="myTable" class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr style="background-image: linear-gradient(#93A5CF , #E4EfE9);">
+                <th>#</th>
+                <th>Book Title</th>
+                <th>Book Author</th>
+                <th>Book Pages</th>
+                <th>Books Available</th>
+                <th>Total Available</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %} 
+            <tr class="bg-white">
+                <td class="bg-white">{{ forloop.counter }}</td>
+                <td class="bg-white">{{ book.book_title }}</td>
+                <td class="bg-white">{{ book.book_author }}</td>
+                <td class="bg-white">{{ book.book_pages }}</td>
+                <td class="bg-white">{{ book.available }}</td>
+                <td class="bg-white">{{ book.total }}</td>
+
+                <td class="bg-white text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="text-center text-primary fa-solid fa-eye"></i></a></td>
+
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Book Title</label>
+                                <input disabled value="{{ book.book_title }}" type="text" class="bg-white form-control" name="title" id="title"
+                                    placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="book_author" class="form-label">Book Author</label>
+                                <input disabled value="{{ book.book_author }}" type="text" class="bg-white form-control" name="book_author" id="book_author"
+                                placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="book_pages" class="form-label">Book Pages</label>
+                                <input disabled value="{{ book.book_pages }}" type="text" class="bg-white form-control" name="book_pages" id="book_pages"
+                                    placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="total" class="form-label">Available</label>
+                                <input disabled value="{{ book.available }}" type="text" class=" bg-white form-control" name="total" id="total"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="total" class="form-label">Total</label>
+                                <input disabled value="{{ book.total }}" type="text" class="bg-white form-control"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="summary" class="form-label">Book summary</label>
+                                <textarea disabled class="bg-white form-control" name="summary" id="summary" rows="3">{{ book.summary }}</textarea>
+                            </div>
+                        </div>
+          
+                      </div>
+                    </div>
+                  </div>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  
+
+    <script>
+        $(document).ready(function(){
+    $('#myTable').DataTable();
+});
+    </script>
+</div>
+{% endblock body %}

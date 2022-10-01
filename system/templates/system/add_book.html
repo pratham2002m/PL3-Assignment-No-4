@@ -1,0 +1,48 @@
+<title>Add New Book</title>
+{% extends 'system/base.html' %}
+
+{% block body %}
+<div class="d-flex align-items-center justify-content-center bg-secondary">
+    
+    <div class="card m-3 w-50 p-3">
+        <div class="card-body">
+            <h4 class="text-center">ADD BOOK</h4>
+            <form method="POST" class="form-inline">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="title" class="form-label">Book Title</label>
+                    <input type="text" class="form-control" name="title" id="title"
+                        placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="book_pages" class="form-label">Book Pages</label>
+                    <input type="text" class="form-control" name="book_pages" id="book_pages"
+                        placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="book_author" class="form-label">Book Author</label>
+                    <input type="text" class="form-control" name="book_author" id="book_author"
+                        placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="total" class="form-label">Total</label>
+                    <input type="text" class="form-control" name="total" id="total"></input>
+                </div>
+                <div class="mb-3">
+                    <label for="summary" class="form-label">Book summary</label>
+                    <textarea class="form-control" name="summary" id="summary" rows="3"></textarea>
+                </div>
+             
+          
+                <button type="submit" class="btn btn-success">Add Book</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+</script>
+
+{% endblock %}

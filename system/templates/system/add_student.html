@@ -1,0 +1,49 @@
+<title>Add New Book</title>
+{% extends 'system/base.html' %}
+
+{% block body %}
+<div class="d-flex align-items-center justify-content-center bg-secondary">
+    
+    <div class="card m-3 w-50 p-3">
+        <div class="card-body">
+            <h4 class="text-center">ADD STUDENT</h4>
+            <form method="POST" class="form-inline">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="prn" class="form-label">Student PRN</label>
+                    <input type="text" class="form-control" name="prn" id="prn"
+                        placeholder="">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label">Student Name</label>
+                    <input type="text" class="form-control" name="name" id="name"
+                        placeholder="">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="branch" class="form-label">Student Branch</label>
+                    <input type="text" class="form-control" name="branch" id="branch"
+                        placeholder="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Student Email</label>
+                    <input type="email" class="form-control" name="email" id="email"
+                        placeholder="">
+                </div>
+
+          
+          
+                <button type="submit" class="btn btn-success">Add Student</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+</script>
+
+{% endblock %}
