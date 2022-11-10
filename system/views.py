@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
 from .models import Students, Book, Book_Issue, Record_Issue
 from datetime import date
+from django.conf import settings
+from django.shortcuts import redirect
 
 # Create your views here.
 
+
 fine = 50
+
+
+ 
+def error_404_view(request, exception):
+    print("hcuierugheriuh")
+    return render(request, 'system/404.html')
 
 def index(request):
     return render(request, 'system/index.html')

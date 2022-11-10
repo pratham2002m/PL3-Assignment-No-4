@@ -3,6 +3,8 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+handler404 = 'system.views.error_404_view'
+
 urlpatterns = [
     path('', views.index,name='index'),
     path('add_book/', views.add_book,name='add_book'),
