@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1'
-    'librarymanagement1 .herokuapp.com'
+    'librarymanagment1.herokuapp.com'
 ]
 
 
