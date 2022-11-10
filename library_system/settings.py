@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-3)penc34&xgbg@frgw@ejd3$a5eg*=xnrkt74d+lkvfmk)!iv1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+    'librarymanagement1.herokuapp.com'
+]
 
 
 # Application definition
@@ -49,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'library_system.urls'
